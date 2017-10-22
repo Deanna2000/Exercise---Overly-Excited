@@ -26,3 +26,13 @@ a  .disabled {
 .bluebird {
     color: blue;
 }
+/* I have no idea what I'm doing here...
+div > h4 > .grandparent:first-child {
+    border: 1px solid green;
+    border-radius: 10px;
+} */
+
+.promo {
+    color: gold;
+    font-style: bold;
+}
