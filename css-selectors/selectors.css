@@ -36,3 +36,7 @@ div > h4 > .grandparent:first-child {
     color: gold;
     font-style: bold;
 }
+
+input {
+    height: 25px;
+     }
