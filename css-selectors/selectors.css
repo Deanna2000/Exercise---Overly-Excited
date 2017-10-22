@@ -14,3 +14,7 @@
 a  .disabled {
     color: pink;
 }
+
+.active {
+    color: yellow;
+}
