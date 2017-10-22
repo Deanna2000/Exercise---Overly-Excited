@@ -7,6 +7,10 @@
     padding-left: 80px;
 }
 
-/* a {
-    padding: 60px;
-} */
+.disabled {
+    color: gray;
+}
+
+a  .disabled {
+    color: pink;
+}
