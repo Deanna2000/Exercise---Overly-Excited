@@ -52,7 +52,7 @@ console.log(currentItem.type);
 
 // If (currentItem.type === "furniture"); {
 //       console.log("currentItem", currentItem)
-//       furnitureLog += currentItem
+      
 //     }
 // Else If (currentItem.type ==="art"); {
 // console.log("currentItem", currentItem)
@@ -64,6 +64,6 @@ console.log(currentItem.type);
 
 
 //writing the list of objects with their names and descriptions to the browser    
-let ItemWrite = document.getElementById("inventory").innerHTML += `<article><h2>${currentItem.name}</h2><p>${currentItem.description}</p></article>`;
+let ItemWrite = document.getElementById("inventory").innerHTML += `<article><h2>${currentItem.type}</h2><h3>${currentItem.name}</h3><p>${currentItem.description}</p></article>`;
   
 }}
