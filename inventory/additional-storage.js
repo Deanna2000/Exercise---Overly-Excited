@@ -28,10 +28,42 @@ const VintageCouch = {
     "description": "I bought 3 metal rails and some hooks and hanging shelves so I could hang up all of my flatware and spices on the wall. It's a defining aspect of my kitchen."
   }
   
+  //push the items into a category
   art.push(swirlPainting)
   furniture.push(VintageCouch)
   cuisine.push(railStorage)
 
-// Store the new database back into local storage.
-//const homeInventoryString = JSON.stringify(HomeInventory)
-//localStorage.setItem("homeInventory", homeInventoryString)
+//iterate over each object in the database
+for (var key in HomeInventory){
+ let inventoryIndex = HomeInventory[key];
+
+    //   console.log("CIV",inventoryIndex);
+    //   console.log("HIL", inventoryIndex.length);
+
+//iterate over the properties for each object we just identified ^
+for (let i = 0; i <inventoryIndex.length; i++) {
+    // console.log("HIL2",inventoryIndex.length)
+
+    //adding the current item to a variable
+let currentItem = inventoryIndex[i];
+    // console.log("ItemName", currentItem.name)
+
+console.log(currentItem.type);
+
+// If (currentItem.type === "furniture"); {
+//       console.log("currentItem", currentItem)
+//       furnitureLog += currentItem
+//     }
+// Else If (currentItem.type ==="art"); {
+// console.log("currentItem", currentItem)
+//       artLog += currentItem
+//     }
+// Else If (currentItem.type ==="cuisine"); {
+// console.log("currentItem", currentItem)
+//       cuisineLog += currentItem
+
+
+//writing the list of objects with their names and descriptions to the browser    
+let ItemWrite = document.getElementById("inventory").innerHTML += `<article><h2>${currentItem.name}</h2><p>${currentItem.description}</p></article>`;
+  
+}}
