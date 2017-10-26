@@ -16,10 +16,10 @@ keyAmount = {} //declare keyAmount
 for (var key in piggyBank) {
     if (piggyBank.hasOwnProperty(key)) {
         let keyAmount = Math.floor(dollarAmount / piggyBank[key])
+       
         if (keyAmount > 0) {
             console.log("Number of", (key), ": ", keyAmount)
-            dollarAmount -= (keyAmount * (piggyBank[key]))
-            console.log(piggyBank[key])
+            dollarAmount -= (keyAmount * (piggyBank[key]))//rounding issue here
             console.log("Remaining", dollarAmount)
         }
         else {
