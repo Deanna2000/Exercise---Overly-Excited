@@ -1,4 +1,4 @@
-// set the dollar amount we are calculating
+//Set the dollar amount we are calculating
 let dollarAmount = 2.98
 const piggyBank = {
     quarters: .25,
@@ -9,7 +9,7 @@ const piggyBank = {
 
 let keyAmount = 0;
 
-//set up something to deplete dollarAmount and identify the number of coins (quarters, etc.)
+//Set up something to deplete dollarAmount and identify the number of coins (quarters, etc.)
 
 keyAmount = {} //declare keyAmount
 
