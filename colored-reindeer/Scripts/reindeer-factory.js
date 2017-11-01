@@ -13,18 +13,16 @@ const getNextColor = function* () {
 //setting up iterator
 const getColor = getNextColor();
 
-//getting the next color from the generator
-console.log("setup",getColor.next().value)
 
 //set up function to create reindeer objects
-const createReindeerObj = function (name, color) {
+const createReindeerObj = function (name) {
     return Object.create(null, {
         "name": {
             value: name, 
             enumerable: true
         },
         "color": {
-            value: color,
+            value: getColor.next().value,//call the next item in the color generator
             enumerable: true
         }
     })
@@ -33,16 +31,11 @@ const createReindeerObj = function (name, color) {
 //use factory function to grab reindeer name and call colors from generator
 const reindeerFactory = function () {
     const reindeer = ["Dasher", "Dancer", "Prancer", "Vixen", "Comet", "Cupid", "Donner", "Blitzen"]
-    for (i = 0; i < reindeeer.length; i++) {
-        console.log(reindeer[i])
-        console.log(getColor.next().value) //call the next item in the color generator
-        //use createReindeerObj to add this information to the coloredReindeer array
-        
-    }
-}
-   
-    // Put new reindeer object in coloredReindeer array
     const coloredReindeer = []
-
-
-    // Return coloredReindeer array
+    for (i = 0; i < reindeer.length; i++) {
+        //use createReindeerObj to add this information to the coloredReindeer array
+        coloredReindeer.push(createReindeerObj(reindeer[i])) // Put new reindeer object in coloredReindeer array
+    }
+    console.log(coloredReindeer)
+    return coloredReindeer // Return coloredReindeer array
+}
