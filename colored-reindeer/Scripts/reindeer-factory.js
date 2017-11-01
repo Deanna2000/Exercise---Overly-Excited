@@ -1,33 +1,48 @@
-
-
-    // Write a for function to generate colors
-    const getNextColor = function* () {
-        const colors = ["Blue", "Red", "Orange", "Purple", "Goldenrod",
+// Write a function to generate colors
+const getNextColor = function* () {
+    const colors = ["Blue", "Red", "Orange", "Purple", "Goldenrod",
         "Aquamarine", "Olive", "Azure", "Fuchsia", "Chocolate", "Salmon", "Amaranth"]
-        let counter = 0
+    let counter = 0
 
-        while (counter < colors.length) {
-            yield currentColor = colors[counter]
-            counter += 1
-
-            console.log(currentColor)
-        }
+    while (counter < colors.length) {
+        yield currentColor = colors[counter]
+        counter += 1
     }
+}
 
-    const colorBuilder = getNextColor()
+//setting up iterator
+const getColor = getNextColor();
 
-    colorBuilder.next().value
+//getting the next color from the generator
+console.log("setup",getColor.next().value)
 
-    // const coloredReindeerBuilder = function () {
-    //     const reindeer = ["Dasher", "Dancer", "Prancer", "Vixen", "Comet", "Cupid", "Donner", "Blitzen"]
+//set up function to create reindeer objects
+const createReindeerObj = function (name, color) {
+    return Object.create(null, {
+        "name": {
+            value: name, 
+            enumerable: true
+        },
+        "color": {
+            value: color,
+            enumerable: true
+        }
+    })
+}
 
-
-
-
-
-    // Invoke factory function to create reindeer object
-
+//use factory function to grab reindeer name and call colors from generator
+const reindeerFactory = function () {
+    const reindeer = ["Dasher", "Dancer", "Prancer", "Vixen", "Comet", "Cupid", "Donner", "Blitzen"]
+    for (i = 0; i < reindeeer.length; i++) {
+        console.log(reindeer[i])
+        console.log(getColor.next().value) //call the next item in the color generator
+        //use createReindeerObj to add this information to the coloredReindeer array
+        
+    }
+}
+   
     // Put new reindeer object in coloredReindeer array
+    const coloredReindeer = []
 
 
     // Return coloredReindeer array
