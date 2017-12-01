@@ -1,0 +1,44 @@
+<!doctype>
+<html>
+
+<head>
+
+</head>
+
+<body ng-app="TodoApp">
+    <header>
+    </header>
+    <section ng-controller="TodoCtrl">
+        <h1>{{ title }}</h1>
+
+        <div>
+            <input type="text" ng-model="macaroni" />
+            <div> {{ macaroni }} </div>
+        </div>
+        <div>
+            <ul ng-repeat="todo in todos | filter: searchText">
+                <li>{{todo.name}}</li>
+                <button ng-click="killTodo(todo)">Finish</button>
+                </li>
+            </ul>
+        </div>
+        Search:
+        <input type="text" ng-model="searchText" />
+        <div>
+        Grouped tasks:
+        <select ng-model="theTodo" ng-options="value.name group by value.complete for value in todos">
+        </select>
+        </div>
+    </section>
+
+    <footer>
+
+    </footer>
+
+
+
+    <script src="lib/node_modules/angular/angular.min.js"></script>
+    <script src="./app/Todo.js"></script>
+</body>
+
+</html>
